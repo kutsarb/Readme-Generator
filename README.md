@@ -24,8 +24,7 @@
 
   ## Usage
 
-  [Video Link]\utils\ezgif.com-gif-maker.gif
-
+  ![Alt text](ezgif.com-gif-maker.gif) / ![](ezgif.com-gif-maker.gif)
   This project can be used to create a simple yet full readme file
 
   ## License
