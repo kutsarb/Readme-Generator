@@ -1,7 +1,8 @@
 const inquirer = require("inquirer")
 const fs = require("fs")
 const path = require("path")
-const axios = require("axios")
+const generate = require('./utils/generateMarkdown.js');
+
 // array of questions for user
 const questions = [
     {
@@ -11,7 +12,7 @@ const questions = [
     },
     {
         type: "input",
-        name: "title",
+        name: "projectName",
         message: "What is your project title?"
     },
     {
@@ -31,6 +32,11 @@ const questions = [
     },
     {
         type: "input",
+        name: "license",
+        message: "Please provide any licensing"
+    },
+    {
+        type: "input",
         name: "contributing",
         message: "Please provide the contributing parties"
     },
@@ -39,22 +45,27 @@ const questions = [
         name: "test",
         message: "Please provide test instructions"
     },
+    {
+        type: "input",
+        name: "questions",
+        message: "Please provide a way someone with questions can reach out"
+    },
 
 ];
 
-// function to write README file
-function writeToFile(fileName, data) {
-    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
-};
 
 // function to initialize program
 function init() {
-    inquirer.prompt(questions) // .then function
-        .then(function (data) {
-                writeToFile(data)
+    inquirer.prompt(questions)
+        // .then function
+        .then(function (res) {
 
+            fs.writeFile("README.md", generate(res, path), function (err) {
+                if (err) {
+                    throw err;
+                };
             });
-    // call the function writeToFile using the data that we pass (ie the inquirer responses)
+        });
 };
 // function call to initialize program
 init();
