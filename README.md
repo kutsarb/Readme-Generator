@@ -24,7 +24,8 @@
 
   ## Usage
 
-  ![Alt text](ezgif.com-gif-maker.gif) / ![](ezgif.com-gif-maker.gif)
+  ![Readme Generator gif](ezgif.com-gif-maker.gif) / ![](ezgif.com-gif-maker.gif)
+  
   This project can be used to create a simple yet full readme file
 
   ## License
