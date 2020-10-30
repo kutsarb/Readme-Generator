@@ -63,7 +63,9 @@ function init() {
             fs.writeFile("README.md", generate(res, path), function (err) {
                 if (err) {
                     throw err;
+                    
                 };
+                console.log("Great success! You have Readme")
             });
         });
 };
